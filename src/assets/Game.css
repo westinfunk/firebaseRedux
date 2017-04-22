@@ -1,22 +1,166 @@
-/*#win {*/
-  /*background-color: purple;*/
-  /*pointer-events: none;*/
 
-  /*overflow: hidden;
-  background: transparent;
-  z-index: 0;
-  top: 0%;
-  left: 0%; 
-} */
+ /*part of Game.js*/
+ .game {
+  display: flex;
+  flex-direction: 'column';
+  border-style: solid;
+  border-color: red;
+ }
 
-/*.win {
-  pointer-events: none; 
-  z-index: 10;
-  background: yellow;
-}*/
+ .overall-game {
+  border-style: solid;
+  border-color: chartreuse;
+  flex-direction: column;
+  display: flex;
+ }
+
+/*top div for players, tokyo & card market*/
+ .game-view{
+  display: flex;
+  height: 500px;
+  width: 100%;
+  border-style: solid;
+  border-color: blue;
+  justify-content: space-between;
+ }
 
 
-/*.win {*/
-   /*background-color: purple;*/
-   /*pointer-events: none;*/
- /*}*/
+/*bottom div for dice & chat*/
+ .game-player-controls {
+  display: flex;
+  width: 100%;
+  border-style: solid;
+  color: #F13FD1;
+ }
+
+/*left div for displaying players*/
+ .players-list {
+  width: 300px;
+  border: solid;
+  border-color: #5EE3F1;
+ }
+
+ /*middle div displaying King avatar*/
+ .tokyo {
+  border-style: solid;
+  border-color: #F1C0B4;
+ }
+
+ .market {
+  width: 300px;
+  border-style: solid;
+  border-color: #5EE3F1;
+ }
+
+ .map-area {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border-style: solid;
+  border-color: green;
+ }
+
+ .king-caption {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+ }
+
+ .king-display {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  left: 45%;
+ }
+
+.player-stat-box {
+  border-style: solid;
+  border-color: red;
+}
+
+ .player-stat-title {
+  border-style: solid;
+  border-color: green;
+ }
+
+ .player-stat.value {
+  border-style: solid;
+  border-color: yellow;
+ }
+
+ .dice-box {
+
+  border-style: solid;
+  border-color: #D6FFF2;
+  display: flex;
+  height: 160px;
+  flex-direction: row;
+ }
+
+ .dice-buttons {
+  border-style: solid;
+  border-color: darkviolet;
+  width: 100px;
+ }
+
+ .dice-faces {
+  border-style: solid;
+  border-color: deeppink;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+ }
+
+ .dice-face-image {
+    width: 30px;
+    height: 30px;
+ }
+
+ .dice-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+ }
+
+ .dice-roll-button {
+
+ }
+
+ .dice {
+  font-weight: bold;
+  margin: 8px;
+  box-shadow: grey -1px 3px 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 60px;
+  font-size: 30px;
+  border-radius: 6px;
+  height: 60px;
+  background-color: black;
+  color: #F5A623;
+  cursor: pointer; 
+  cursor: hand;
+}
+
+.dice-toggled {
+  border: solid;
+  border-color: #F5A623;
+  margin: 8px;
+  font-weight: bold;
+  box-shadow: grey -1px 3px 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 54px;
+  font-size: 30px;
+  border-radius: 4px;
+  height: 54px;
+  background-color: #65695F;
+  color: #F5A623;
+  cursor: pointer; 
+  cursor: hand;
+}

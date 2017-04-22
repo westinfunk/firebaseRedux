@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../assets/market.css';
+//import '../assets/market.css';
+import '../assets/Game.css'
 import energy from '../assets/media/energy.png';
 
 class Market extends Component {

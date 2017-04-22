@@ -72,19 +72,17 @@ class ChatBox extends Component {
       >
         <form>
           <input
-            type="submit" value="send" className="chatboxButton"
+            type="submit" value="send" className="chat-box-send"
             onClick={this.sendMessage.bind(this)}
           />
           <input
             type="text"
-            className="chatboxInput"
+            className="chat-box-input"
             onChange={this.updateTextInput.bind(this)} value={this.state.textInput}
           />
 
         </form>
-        <div
-          className="messages"
-        >
+        <div className="messages-list">
           {this.renderMessages(messages, playersInfo)}
         </div>
       </div>);

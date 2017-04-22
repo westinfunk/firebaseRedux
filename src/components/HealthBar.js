@@ -10,11 +10,6 @@ class HealthBar extends Component {
   }
 
   componentDidUpdate(){
-    if (this.state.displayHealth < this.props.health){
-      setTimeout(()=>this.setState({ displayHealth: this.state.displayHealth+.1 }),20)
-    } else if (this.state.displayHealth > this.props.health+.1) {
-      setTimeout(()=>this.setState({ displayHealth: this.state.displayHealth-.1 }),20)
-    }
   }
 
   render() {

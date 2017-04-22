@@ -44,47 +44,48 @@ export default class Game extends React.Component {
 
   render() {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-
-        <div style={{ position: 'relative', flex: 1, display: 'flex', alignContent: 'center', justifyContent: 'center' }}>
-
-          <img style={{ display: 'flex', flex: 1, height: '190px', borderRadius: '8px', alignItems: 'center' }} src={map} />
-
-          { this.props.game.king.uid && <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              flexDirection: 'column',
-              position: 'absolute',
-              left: '45%',
-             /* top: '10%', */
-            }}
-          >
-            <img
-              style={{ width: '150px',
-                /* boxShadow: 'grey -1px 3px 10px', */
-                height: '150px',
-                /* borderRadius: '100%', */
-                borderColor: 'black',
-                borderWidth: '2px',
-              }} src={charactersOBJ[this.kingOrWinnerImage()]}
-            />
-            <div style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '25px' }}>{this.kingOrWinnerText()}</div>
-          </div>}
-
+      <div className="overall-game">
+        <div className="game-view">
+          <div className="players-list">
+            <CurrentUser auth={this.props.auth}/>
+          </div>
+          <div className="tokyo">
+          </div>
+          <div className="market">
+          </div>
         </div>
-
-
-        <Market />
-
-        <CurrentUser auth={this.props.auth} />
-        <ChatBox />
-        {/* <DiceBox auth={this.props.auth} />*/}
-
-
+        <div className="game-player-controls">
+          <DiceBox auth={this.props.auth}/>
+          <ChatBox />
+        </div>
       </div>
     );
   }
 
 }
 
+        // <div className="map-area">
+
+        //   <img style={{borderStyle: 'solid', borderColor: 'crimson'}} src={map} />
+
+        //   { this.props.game.king.uid && <div className="king-display">
+        //     <img
+        //       style={{ width: '150px',
+        //         /* boxShadow: 'grey -1px 3px 10px', */
+        //         height: '150px',
+        //          borderRadius: '100%', 
+        //         borderColor: 'black',
+        //         borderWidth: '2px',
+        //       }} src={charactersOBJ[this.kingOrWinnerImage()]}
+        //     />
+        //     <div style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '25px' }}>
+        //       {this.kingOrWinnerText()}
+        //     </div>
+        //   </div>}
+
+        // </div>
+        // <Market />
+
+        // <CurrentUser auth={this.props.auth} />
+        // <ChatBox />
+        // {/* <DiceBox auth={this.props.auth} />*/}

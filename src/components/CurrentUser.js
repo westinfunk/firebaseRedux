@@ -10,7 +10,8 @@ import points from '../assets/media/points.png';
 import HealthBar from '../components/HealthBar';
 import PlayerHand from './PlayerHand';
 
-import '../assets/CurrentUser.css';
+//import '../assets/CurrentUser.css';
+import '../assets/Game.css'
 
 
 import KickKing from '../containers/kickKingContainer';
@@ -37,7 +38,7 @@ class CurrentUser extends React.Component {
     return icon;
   }
 
-  stlyeChosenOne(playerUID) {
+  styleChosenOne(playerUID) {
     return this.props.game.chosenOne && playerUID === this.props.game.chosenOne.uid ? 'chosenOne' : 'notChosenOne';
   }
 
@@ -67,32 +68,30 @@ class CurrentUser extends React.Component {
         <div className="CurrentUser--identification">
           {/* <h3 className="CurrentUser--displayName">{auth.displayName}</h3>
           <p className="CurrentUser--email">{auth.email}</p>*/}
-          <div style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
+          <div style={{borderStyle: 'solid', borderColor: 'fuchsia'}}>
+
             {map(this.props.playersOnline, player =>
               <div key={player.uid} >
-                <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '15px' }}>
-                  <div style={{ marginLeft: '20px', flex: 1 }} >
-                    { (player.uid == this.props.game.chosenOne.uid) && <DiceBox auth={this.props.auth} />}
-                  </div>
-                  <div key={player.uid} className={this.stlyeChosenOne(player.uid)} style={{ display: 'flex', flex: 1, maxWidth: '400px', flexDirection: 'row', alignItems: 'center', borderTopLeftRadius: 10, borderTopRightRadius: 10, borderBottomLeftRadius: 10, borderBottomRightRadius: 10, paddingLeft: '10px', paddingRight: '10px' }}>
+                <div style={{borderStyle: 'solid', borderColor: 'indigo'}}>
+                  <div key={player.uid} className={this.styleChosenOne(player.uid)} style={{borderStyle: 'solid', borderColor: 'lightcyan'}}>
                     <div style={{ flex: 1 }}><img style={{ margin: '10px', width: '100px', height: '100px', borderRadius: 100 }} src={charactersOBJ[this.props.game.players[player.uid].character.image]} alt={player.photoURL} /></div>
                     <div style={{ flex: 3 }}>
-                      <div style={{ flex: 1, flexDirection: 'column', alignSelf: 'center', margin: '10px' }}>
+                      <div style={{borderStyle: 'solid', borderColor: 'lightgreen'}}>
 
-                        <div style={{ fontSize: '24px', margin: '10px' }}>{player.displayName} {this.generatePlayerIcon(player, this.props.game)} <HealthBar health={player.stats.health} /> </div>
-                        <div style={{ flex: 1, flexDirection: 'row', display: 'flex' }}>
+                        <div style={{borderStyle: 'solid', borderColor: 'lightsalmon'}}>{player.displayName} {this.generatePlayerIcon(player, this.props.game)} <HealthBar health={player.stats.health} /> </div>
+                        <div style={{borderStyle: 'solid', borderColor: 'lightseagreen'}}>
 
-                         <div style={{ flex: 1, flexDirection: 'row', display: 'flex', alignItems: 'center' }}>
-                            <div style={{ flex: 1, margin: '5px' }}><img style={{ width: '25px', height: '25px' }} src={health} /></div>
-                            <div style={{ flex: 1, margin: '5px', fontSize: '16px' }}> {player.stats.health}</div>
+                         <div className="player-stat-box">
+                            <div className="player-stat-icon"><img style={{ width: '25px', height: '25px' }} src={health} /></div>
+                            <div className="player-stat-value"> {player.stats.health}</div>
                           </div>
-                         <div style={{ flex: 1, flexDirection: 'row', display: 'flex', alignItems: 'center' }}>
-                            <div style={{ flex: 1, margin: '5px' }}><img style={{ width: '25px', height: '25px' }} src={energy} /></div>
-                            <div style={{ flex: 1, margin: '5px', fontSize: '16px' }}> {player.stats.energy}</div>
+                         <div className="player-stat-box">
+                            <div className="player-stat-icon"><img style={{ width: '25px', height: '25px' }} src={energy} /></div>
+                            <div className="player-stat-value"> {player.stats.energy}</div>
                           </div>
-                         <div style={{ flex: 1, flexDirection: 'row', display: 'flex', alignItems: 'center' }}>
-                            <div style={{ flex: 1, margin: '5px' }}><img style={{ width: '25px', height: '25px' }} src={points} /></div>
-                            <div style={{ flex: 1, margin: '5px', fontSize: '16px' }}> {player.stats.points}</div>
+                         <div className="player-stat-box">
+                            <div className="player-stat-icon"><img style={{ width: '25px', height: '25px' }} src={points} /></div>
+                            <div className="player-stat-value"> {player.stats.points}</div>
                           </div>
 
                        </div>
